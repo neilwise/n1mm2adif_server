@@ -15,7 +15,6 @@ def is_valid_contactinfo_packet(data: bytes) -> bool:
 
 def print_packet_contents(data: bytes):
     xml_text = data.decode('utf-8')
-    print("=== Received Valid <contactinfo> Packet ===")
     print(xml_text)
     print("===========================================\n")
 
@@ -28,9 +27,11 @@ def start_udp_server():
         data, addr = sock.recvfrom(4096)
         print(f"Packet received from {addr}")
         if is_valid_contactinfo_packet(data):
+            print("=== Received Valid <contactinfo> Packet ===")
             print_packet_contents(data)
         else:
-            print("Not a valid <contactinfo> XML packet.\n")
+            print_packet_contents(data)
+            # print("Not a valid <contactinfo> XML packet.\n")
 
 if __name__ == "__main__":
     start_udp_server()
