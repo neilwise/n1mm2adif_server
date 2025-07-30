@@ -20,6 +20,19 @@ appended entries are added to the station log.
     The script runs continuously and logs each valid <contactinfo> packet in real time.
     
 ## Requirements
+    Python must be installed (my release is 3.12)
     AutoHotKey must be installed if automatic launch on N1MM startup is required
-    
+## Usage
+    Copy n1mm2adif_server.py, n1mm2adif_server.bat and udp_to_adi.ahk to the SupportFiles folder in your N1MM installation.
+    Modify all three of these files to reflect the path to your Python installation and the path to your N1MM installation.
+    In N1MM:
+        Config->Configure Ports, Mode Control, Winkey, etc...->Broadcast Data
+            Ensure Contacts is ticked and the associated port is set to 127.0.0.1:12060
+    For manual start, just execute the n1mm2adif_server.bat file from a terminal window, or create a shortcut to it (on the desktop for example) and click on that.
+    For auto-start when N1MM is started, N1MM needs to be configured:
+        Config->Configure Ports, Mode Control, Winkey, etc...->Function Keys tab
+            Tick the Start + Stop AutoHotKey Program
+            Set the AHK Script name to udp_to_adi.ahk
+            ->OK
+    That should be it.
  
