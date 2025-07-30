@@ -1,1 +1,1 @@
-Run "C:\Users\neil\AppData\Local\Programs\Python\Python312\python.exe C:\Users\neil\Documents\N1MM Logger+\SupportFiles\n1mm2adif_server.py"
+Run "C:\Users\neil\Documents\N1MM Logger+\SupportFiles\n1mm2adif_server.bat"
